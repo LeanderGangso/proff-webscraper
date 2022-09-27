@@ -70,10 +70,12 @@ class Proff:
                     firm_urls, next_page = proff.get_firm_urls(next_page)       
 
 
-def save_to_file(filename, mode='w'):
+def save_to_file(filename, mode='a'):
     def inner(info):
         with open(filename, mode) as f:
-            f.write(f)
+            for key, val in info.items():
+                f.write(key + ': ' + str(val))
+                f.write('\n')
             f.write('\n')
     return inner
 
@@ -81,6 +83,6 @@ def save_to_file(filename, mode='w'):
 if __name__ == '__main__':
     proff = Proff()
     # print info to terminal
-    proff.run()
+    #proff.run()
     # example of custom save method
-    #proff.run(save_to_file('proff_data.txt'))
+    proff.run(save_to_file('proff_data.txt'))
