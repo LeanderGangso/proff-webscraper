@@ -83,6 +83,6 @@ def save_to_file(filename, mode='a'):
 if __name__ == '__main__':
     proff = Proff()
     # print info to terminal
-    #proff.run()
+    proff.run()
     # example of custom save method
-    proff.run(save_to_file('proff_data.txt'))
+    #proff.run(save_to_file('proff_data.txt'))
